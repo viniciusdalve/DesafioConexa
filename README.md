@@ -1,6 +1,6 @@
 # DesafioConexa
 
-- Este projeto ele pesquisa filme da franquia Star Wars na api "https://swapi.dev/", através de um endpoint GET, e os adiciona em um banco de dados H2, com
+- Este projeto ele pesquisa filmes da franquia Star Wars na api "https://swapi.dev/", através de um endpoint GET, e os adiciona em um banco de dados H2, com
 a alternativa que se não encontrar o filme desejado, ele irá incluir as informações deste filme no banco de dados H2 da mesma forma. 
 Recursos: Pesquisa por titulo ou id do episodio. Paginacao de 10 itens.
 Testes unitarios implementados.
@@ -10,7 +10,7 @@ Java 17
 SpringBoot 3.0.4
 Maven
 
-A utilização deste projesto consiste em colnar ele para a máquina desejada, executa-lo e chamar o endpont:
+A utilização deste projesto consiste em executar ele na máquina desejada,  e chamar o endpont:
 "http://localhost:8080/v1/starwars/films?title=exemplo&episode_id=exemplo"
 
 Observacoes de versao
