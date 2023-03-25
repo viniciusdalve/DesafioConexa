@@ -1,7 +1,7 @@
-package desafioconexa.com.example.conexa.parameters;
+package desafioconexa.com.example.conexa.presenters;
 
 import desafioconexa.com.example.conexa.models.FilmData;
-
+import java.text.SimpleDateFormat;
 import java.util.Date;
 
 public class FilmDataPresenter {
@@ -16,18 +16,11 @@ public class FilmDataPresenter {
     public FilmDataPresenter() {
     }
 
-    public FilmDataPresenter(String title, Long episode_id, String director, Date release_date) {
-        this.title = title;
-        this.episode_id = episode_id;
-        this.director = director;
-        this.release_date = release_date;
-    }
-
     public FilmDataPresenter(FilmData a) {
         this.title = a.getTitle();
         this.episode_id = a.getEpisode_id();
         this.director = a.getDirector();
-        this.release_date = getRelease_date();
+        this.release_date = a.getRelease_date();
     }
 
     public String getTitle() {
@@ -54,8 +47,12 @@ public class FilmDataPresenter {
         this.director = director;
     }
 
-    public Date getRelease_date() {
-        return release_date;
+    public String getRelease_date() {
+        if (release_date == null) {
+            return null;
+        }
+        SimpleDateFormat sdfOutput = new SimpleDateFormat("dd/MM/yyyy");
+        return sdfOutput.format(release_date);
     }
 
     public void setRelease_date(Date release_date) {

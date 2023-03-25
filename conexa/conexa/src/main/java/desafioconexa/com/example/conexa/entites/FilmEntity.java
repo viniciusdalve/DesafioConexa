@@ -1,33 +1,34 @@
-package desafioconexa.com.example.conexa.models;
+package desafioconexa.com.example.conexa.entites;
 
-import desafioconexa.com.example.conexa.entites.FilmEntity;
+import javax.persistence.*;
 import java.util.Date;
 
-public class FilmData {
+@Entity
+public class FilmEntity {
+
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private Long id;
+
 
     private String title;
 
+
     private Long episode_id;
+
 
     private String director;
 
+
     private Date release_date;
 
-    public FilmData() {
+    public Long getId() {
+        return id;
     }
 
-    public FilmData(FilmEntity film) {
-        this.title = film.getTitle();
-        this.episode_id = film.getEpisode_id();
-        this.director = film.getDirector();
-        this.release_date = film.getRelease_date();
-    }
-
-    public FilmData(String title, Long episode_id, String director, Date release_date) {
-        this.title = title;
-        this.episode_id = episode_id;
-        this.director = director;
-        this.release_date = release_date;
+    public void setId(Long id) {
+        this.id = id;
     }
 
     public String getTitle() {
@@ -62,3 +63,5 @@ public class FilmData {
         this.release_date = release_date;
     }
 }
+
+
